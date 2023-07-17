@@ -78,6 +78,11 @@ jobs:
         with:
           distribution: "adopt"
           java-version: ${{ inputs.jvmVersion }}
+          
+      - name: download-local-credentials
+        uses: actions/download-artifact@v3
+        with:
+          name: local-credentials
 
       - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v1
